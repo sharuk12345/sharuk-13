@@ -29,4 +29,4 @@ jobs:
 
         env:
           DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-          DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_SHARUK12345 }}
+          DOCKERHUB_SHARUK12345: ${{ secrets.DOCKERHUB_SHARUK12345 }}
