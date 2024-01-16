@@ -23,10 +23,9 @@ jobs:
 
       - name: Build Docker Image
         run: |
-          docker build -t sharukshaik/sharuk-repo:latest .
-          docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_SHARUK12345 }}
-          docker push sharukshaik/sharuk-repo:latest
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/sharuk-repo:latest .
+          echo "${{ secrets.DOCKERHUB_SHARUK12345 }}" | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/sharuk-repo:latest
 
         env:
           DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-          DOCKERHUB_SHARUK12345: ${{ secrets.DOCKERHUB_SHARUK12345 }}
